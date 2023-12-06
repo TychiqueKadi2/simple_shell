@@ -16,7 +16,7 @@ int _printf(char *message, int file_D)
 }
 
 /**
- * writeCharacterToFD - prints a character to filr descriptor
+ * _putchar - prints a character to filr descriptor
  *
  * @chr: Character to print
  * @file_D: specifiy file descriptor to be 0 1 or 2
@@ -26,4 +26,17 @@ int _printf(char *message, int file_D)
 int _putchar(char chr, int file_D)
 {
 	return (write(file_D, &chr, 1));
+}
+
+/**
+ * _printor - Print a message to the standard output
+ *
+ * @message: Message to print to the stdout
+ *
+ * Return: No of byte printed
+ *
+ **/
+int _printor(char *message)
+{
+	return (_printf(message, 1));
 }
