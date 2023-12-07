@@ -79,6 +79,7 @@ char *_strcat(char *dest, char *src);
 char *_strcpy(char *dest, char *src);
 int _strcmp(char *s1, char *s2);
 int _strlen(char *str);
+char *_strdup(char *str);
 int _printf(char *message, int file_D);
 int _putchar(char chr, int file_D);
 int _printor(char *message);
@@ -90,5 +91,10 @@ void free_doublepointer(void **pointer);
 void sigint_handler(int sig);
 void *_realloc(void *ptr, unsigned int cur_size, unsigned int new_size);
 void cmd_args(char **args, shell_type *mytype, char *buffer);
+int check_builtin(shelldata_t *mytype, char **args);
+int find_sysfuncs(shell_type *mytype, char **args);
+void exit_bin(shelldata_t *mytype, char **args);
+void env_bin(shelldata_t *mytype, char **args);
+
 
 #endif
