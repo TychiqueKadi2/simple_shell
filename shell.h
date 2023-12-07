@@ -20,18 +20,6 @@
 /** environ var */
 extern char **environ;
 
-
-char *_strcat(char *dest, char *src);
-char *_strcpy(char *dest, char *src);
-int _strcmp(char *s1, char *s2);
-int _strlen(char *str);
-int _printf(char *message, int file_D);
-int _putchar(char chr, int file_D);
-int _printor(char *message);
-void prompt_info(shell_type *mytype);
-void infinityPrompt(shell_type *mytype);
-char *parse_prompt(void)
-
 /**
  * argc: count of command-line arguments.
  * *argv: actual command-line arguments as an array of strings.
@@ -49,19 +37,34 @@ char *parse_prompt(void)
 */
 typedef struct __attribute__((__packed__))
 {
-	int argc;
-	char **argv;
-	char *cmd;
-	char *cmd_path;
-	char *buff;
-	char **argss;
-	char *env;
-	int pid;
-	int current_mode;
-	int cmd_num;
-	int current_path;
-	int current_stat;
-	int current_error;
+        int argc;
+        char **argv;
+        char *cmd;
+        char *cmd_path;
+        char *buff;
+        char **argss;
+        char *env;
+        int pid;
+        int current_mode;
+        int cmd_num;
+        int current_path;
+        int current_stat;
+        int current_error;
 } shell_type;
+
+char *_strcat(char *dest, char *src);
+char *_strcpy(char *dest, char *src);
+int _strcmp(char *s1, char *s2);
+int _strlen(char *str);
+int _printf(char *message, int file_D);
+int _putchar(char chr, int file_D);
+int _printor(char *message);
+void prompt_info(shell_type *mytype);
+void infinityPrompt(shell_type *mytype);
+char *parse_prompt(void);
+void free_pointer(void *pointer);
+void free_doublepointer(void **pointer);
+void sigint_handler(int sig);
+void *_realloc(void *ptr, unsigned int cur_size, unsigned int new_size);
 
 #endif

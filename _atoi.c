@@ -23,7 +23,7 @@ int _atoi(char *str)
 		if ((*(str + count) >= '0') && (*(str + count) <= '9'))
 		{
 			if (size > 0)
-				m *= 10;
+				j *= 10;
 			size++;
 		}
 		count++;
@@ -31,7 +31,7 @@ int _atoi(char *str)
 
 	for (i = count - size; i < count; i++)
 	{
-		oi = oi + ((*(s + i) - 48) * j);
+		oi = oi + ((*(str + i) - 48) * j);
 		j /= 10;
 	}
 	return (oi * pn);

@@ -8,18 +8,18 @@
  **/
 void infinityPrompt(shell_type *mytype)
 {
-	char *buffer, **args, *env_path;
+	char *buffer, **args;/* *env_path; */
 
 	signal(SIGINT, sigint_handler);
 	while (1)
 	{
 		prompt_info(mytype);
 
-		env_path = getEnv("PATH");
-		// isCurrPath(env_path, mytype);
+		/* env_path = getEnv("PATH"); */
+		/* isCurrPath(env_path, mytype); */
 
-		mytype->env = env_path;
-		// buffer = parse_prompt();
+		/* mytype->env = env_path; */
+		buffer = parse_prompt();
 		if (buffer == NULL)
 		{
 			_printor(mytype->current_mode == 1 ? "exit\n" : "");
@@ -29,12 +29,12 @@ void infinityPrompt(shell_type *mytype)
 		mytype->cmd_num++;
 		if (buffer[0] != '\n')
 		{
-			// args = tokenize_words(buffer, " \t\n");
+			/* args = tokenize_words(buffer, " \t\n"); */
 
 			mytype->argss = args;
 			mytype->buff = buffer;
-			// patternAnalysis(mytype, args);
-			cmd_args(args, mytype, buffer);
+			/* patternAnalysis(mytype, args); */
+			/* cmd_args(args, mytype, buffer); */
 
 			free_doublepointer((void *) args);
 		}
@@ -53,9 +53,9 @@ char *parse_prompt(void)
 {
 	char *buffer = NULL;
 	int i;
-	size_t size;
+	/* size_t size;
 
-	// i = getline(&buffer, &size, stdin);
+	i = getline(&buffer, &size, stdin); */
 
 	if (i == EOF)
 	{
