@@ -29,14 +29,16 @@ int _printf(char *message, int file_D);
 int _putchar(char chr, int file_D);
 int _printor(char *message);
 void prompt_info(shell_type *mytype);
+void infinityPrompt(shell_type *mytype);
+char *parse_prompt(void)
 
 /**
  * argc: count of command-line arguments.
  * *argv: actual command-line arguments as an array of strings.
  * cmd: command to be executed.
  * cmd_path: path of the command to be executed.
- * buffer: buffer for strings input or output.
- * *args: arguments for a command.
+ * buff: buffer for strings input or output.
+ * *argss: arguments for a command.
  * env: environment variables.
  * pid: store a process ID.
  * current_mode: store a mode for iteration.
@@ -51,8 +53,8 @@ typedef struct __attribute__((__packed__))
 	char **argv;
 	char *cmd;
 	char *cmd_path;
-	char *buffer;
-	char **args;
+	char *buff;
+	char **argss;
 	char *env;
 	int pid;
 	int current_mode;
