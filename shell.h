@@ -97,6 +97,8 @@ void exit_bin(shelldata_t *mytype, char **args);
 void env_bin(shelldata_t *mytype, char **args);
 int executable(char *file);
 int File(char *filename);
+int current_dir(char *commandd, char **args, char *buffer, shell_type *mytype);
+char *Find_dir(char *directory, shell_type *mytype);
 
 
 #endif
