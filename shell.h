@@ -34,7 +34,7 @@ extern char **environ;
  * current_path: store the current path index.
  * current_stat: store a status code.
  * current_error: store an error code.
-*/
+ */
 typedef struct __attribute__((__packed__))
 {
         int argc;
@@ -52,6 +52,29 @@ typedef struct __attribute__((__packed__))
         int current_error;
 } shell_type;
 
+
+/**
+ * message: a pointer to message
+ * code: permissions code
+ */
+typedef struct __attribute__((__packed__))
+{
+	char *message;
+	int code;
+} errors_type;
+
+
+/**
+ * commands: a pointer to command
+ * func: a pointer to a shell_type and to a double  pointer to
+ */
+typedef struct __attribute__((__packed__))
+{
+	char *command;
+	void (*func)(shell_type *mytype, char **arguments);
+} sysfunc_type;
+
+
 char *_strcat(char *dest, char *src);
 char *_strcpy(char *dest, char *src);
 int _strcmp(char *s1, char *s2);
@@ -66,5 +89,6 @@ void free_pointer(void *pointer);
 void free_doublepointer(void **pointer);
 void sigint_handler(int sig);
 void *_realloc(void *ptr, unsigned int cur_size, unsigned int new_size);
+void cmd_args(char **args, shell_type *mytype, char *buffer);
 
 #endif
