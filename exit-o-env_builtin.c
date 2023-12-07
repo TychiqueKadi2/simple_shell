@@ -38,7 +38,7 @@ void exit_bin(shell_type *mytype, char **args)
  *
  * Return: nothing
  **/
-void env_bin(shelldata_t *mytype, char **args)
+void env_bin(shell_type *mytype, char **args)
 {
 	(void) mytype;
 	(void) args;

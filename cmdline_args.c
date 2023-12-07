@@ -19,10 +19,10 @@ void cmd_args(char **args, shell_type *mytype, char *buffer)
 	}
 	comand = args[0];
 	mytype->cmd = comand;
-	/* if (check_builtin(mytype, args) == 1)
+	if (check_builtin(mytype, args) == 1)
 	{
 		return;
-	} */
+	}
 	analysis = isFile(comand);
 	if (analysis == 0)
 	{
@@ -41,7 +41,7 @@ void cmd_args(char **args, shell_type *mytype, char *buffer)
 	mytype->cmd_path = Find_dir(comand, mytype);
 	if (mytype->cmd_path != NULL)
 	{
-		run(mytype->cmd_path, args, mytype, buffer);
+		exec_child(mytype->cmd_path, args, mytype, buffer);
 		free_pointer((void *) mytype->cmd_path);
 		return;
 	}

@@ -6,7 +6,7 @@
  *
  * Return: 1 if builtin, else 0
  **/
-int check_builtin(shelldata_t *mytype, char **args)
+int check_builtin(shell_type *mytype, char **args)
 {
 	int a, none;
 
@@ -41,7 +41,7 @@ int find_sysfuncs(shell_type *mytype, char **args)
 {
 	int new;
 
-	new = verifyBuiltin(mytype, args);
+	new = check_builtin(mytype, args);
 	if (new == 0)
 	{
 		return (0);

@@ -84,7 +84,7 @@ int _printf(char *message, int file_D);
 int _putchar(char chr, int file_D);
 int _printor(char *message);
 void prompt_info(shell_type *mytype);
-void infinityPrompt(shell_type *mytype);
+void infinity_Prompt(shell_type *mytype);
 char *parse_prompt(void);
 void free_pointer(void *pointer);
 void free_doublepointer(void **pointer);
@@ -95,6 +95,8 @@ int check_builtin(shelldata_t *mytype, char **args);
 int find_sysfuncs(shell_type *mytype, char **args);
 void exit_bin(shelldata_t *mytype, char **args);
 void env_bin(shelldata_t *mytype, char **args);
+int executable(char *file);
+int File(char *filename);
 
 
 #endif
