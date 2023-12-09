@@ -65,3 +65,13 @@ char *parse_prompt(void)
 
 	return (buffer);
 }
+
+/**
+ * runn - start of the shell process
+ * @mytype: Defined Struct
+ * Return: none
+ */
+void runn(shell_type *mytype)
+{
+	infinity_Prompt(mytype);
+}

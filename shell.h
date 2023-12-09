@@ -99,6 +99,10 @@ int executable(char *file);
 int File(char *filename);
 int current_dir(char *commandd, char **args, char *buffer, shell_type *mytype);
 char *Find_dir(char *directory, shell_type *mytype);
-
+int print_error(char *msg);
+int print_err(char *msge);
+void moreErr_info(shell_type *mytype, char *moreErr);
+void handle_err(shell_type *mytype);
+void runn(shell_type *mytype);
 
 #endif
