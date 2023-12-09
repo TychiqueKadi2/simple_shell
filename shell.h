@@ -109,7 +109,10 @@ char *_env(const char *varr);
 void all_env(void);
 void _pattern(shell_type *mytype, char **arggs);
 char *process_pattern(shell_type *mytype, char *str);
-
+int number_search(unsigned int X);
+int letter_search(char *str);
+char **tokenization(char *str, const char *delimm;
+char *Fusion(char *1st, char *2nd, char *3rd, const char *delimm);
 
 
 #endif
