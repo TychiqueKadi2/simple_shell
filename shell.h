@@ -83,6 +83,7 @@ char *_strdup(char *str);
 int _printf(char *message, int file_D);
 int _putchar(char chr, int file_D);
 int _printor(char *message);
+int _putcharer(char chr);
 void prompt_info(shell_type *mytype);
 void infinity_Prompt(shell_type *mytype);
 char *parse_prompt(void);
@@ -104,5 +105,8 @@ int print_err(char *msge);
 void moreErr_info(shell_type *mytype, char *moreErr);
 void handle_err(shell_type *mytype);
 void runn(shell_type *mytype);
+char *_env(const char *varr);
+void all_env(void);
+
 
 #endif

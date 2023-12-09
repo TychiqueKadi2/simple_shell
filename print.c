@@ -40,3 +40,14 @@ int _printor(char *message)
 {
 	return (_printf(message, 1));
 }
+
+/**
+ * _putcharer - Print a character to the standard output
+ *
+ * @chr: Character to print
+ * Return: character
+ **/
+int _putcharer(char chr)
+{
+	return (write(1, &chr, 1));
+}
