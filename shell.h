@@ -107,6 +107,9 @@ void handle_err(shell_type *mytype);
 void runn(shell_type *mytype);
 char *_env(const char *varr);
 void all_env(void);
+void _pattern(shell_type *mytype, char **arggs);
+char *process_pattern(shell_type *mytype, char *str);
+
 
 
 #endif
