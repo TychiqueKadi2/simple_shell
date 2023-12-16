@@ -15,8 +15,8 @@ void infinity_Prompt(shell_type *mytype)
 	{
 		prompt_info(mytype);
 
-		env_path = getEnv("PATH");
-		isCurrPath(env_path, mytype);
+		env_path = _env("PATH");
+		_path(env_path, mytype);
 
 		mytype->env = env_path;
 		buffer = parse_prompt();
@@ -29,11 +29,11 @@ void infinity_Prompt(shell_type *mytype)
 		mytype->cmd_num++;
 		if (buffer[0] != '\n')
 		{
-			args = tokenize_words(buffer, " \t\n");
+			args = tokenization(buffer, " \t\n");
 
 			mytype->argss = args;
 			mytype->buff = buffer;
-			patternAnalysis(mytype, args);
+			_pattern(mytype, args);
 			cmd_args(args, mytype, buffer);
 
 			free_doublepointer((void *) args);

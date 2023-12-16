@@ -12,12 +12,12 @@ char **tokenization(char *str, const char *delimm)
 	char **wordd, **temp, *tok;
 
 	cur = sizeof(char *);
-	wordd = malloc(old);
+	wordd = malloc(cur);
 	if (wordd != NULL)
 	{
 		new = 1;
 		tok = strtok(str, delimm);
-		while (token)
+		while (tok)
 		{
 			if (tok[0] == '#')
 				break;
@@ -50,49 +50,44 @@ char **tokenization(char *str, const char *delimm)
 /**
  * Fusion - merges words with a delimitar
  *
- * @1st: Word1
- * @2nd: Word2
- * @3rd: Word3
+ * @Fst: Word1
+ * @Snd: Word2
+ * @Trd: Word3
  * @delimm: Separator
  * Return: merged string
  */
-char *Fusion(char *1st, char *2nd, char *3rd, const char *delimm)
+char *Fusion(char *Fst, char *Snd, char *Trd, const char *delimm)
 {
-	int 1st_size, 2nd_size2, 3rd_size, delimm_size;
+	int Fst_size, Snd_size, Trd_size, delimm_size;
 	char *merge;
 
-	1st_size = 2nd_size = 3rd_size = delimm_size = 0;
+	Fst_size = Snd_size = Trd_size = delimm_size = 0;
 
-	if (2nd != NULL)
-		2ndsize = _strlen(2nd);
+	if (Snd != NULL)
+		Snd_size = _strlen(Snd);
 	else
-		2nd = "";
+		Snd = "";
 
-	if (1st != NULL)
-		1st_size = _strlen(1st);
+	if (Fst != NULL)
+		Fst_size = _strlen(Fst);
 	else
-		1st = "";
-
-	if (3rd != NULL)
-		3rdsize = _strlen(3rd);
-	else
-		3rd = "";
+		Fst = "";
 
 	if (delimm != NULL)
 		delimm_size = _strlen((char *)delimm);
 	else
 		delimm = "";
 
-	merge = malloc(size1 + del_size + size2 + del_size + size3 + 2);
+	merge = malloc(Fst_size + delimm_size + Snd_size + delimm_size + Trd_size + 2);
 	if (merge == NULL)
 	{
 		return (NULL);
 	}
-	merge = _strcpy(merge, 1st);
+	merge = _strcpy(merge, Fst);
 	merge = _strcat(merge, (char *)delimm);
-	merge = _strcat(merge, 2nd);
+	merge = _strcat(merge, Snd);
 	merge = _strcat(merge, (char *)delimm);
-	merge = _strcat(merge, 3rd);
+	merge = _strcat(merge, Trd);
 	merge = _strcat(merge, "\n");
 
 	return (merge);

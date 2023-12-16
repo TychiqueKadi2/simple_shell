@@ -19,14 +19,14 @@ int main(int ac, char **av)
 	}
 
 	mytype->pid = getpid();
-	mytype->current_state = 0;
+	mytype->current_stat = 0;
 	mytype->cmd_num = 0;
 	mytype->argc = ac;
 	mytype->argv = av;
 	mytype->current_mode = isatty(0) == 1;
 	runn(mytype);
 
-	state = mytype->current_state;
+	state = mytype->current_stat;
 
 	free(mytype);
 

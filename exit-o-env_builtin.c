@@ -13,7 +13,7 @@ void exit_bin(shell_type *mytype, char **args)
 	state = 1;
 	if (args[1] != NULL)
 	{
-		state = manageNumbers(mytype, args[1]);
+		state = exit_binSupport(mytype, args[1]);
 	}
 
 	if (state == 0)
@@ -21,7 +21,7 @@ void exit_bin(shell_type *mytype, char **args)
 		return;
 	}
 
-	state_mode = mytype->code_stat;
+	state_mode = mytype->current_stat;
 
 	free_doublepointer((void **) args);
 	free_pointer((void *) mytype->buff);

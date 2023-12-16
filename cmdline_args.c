@@ -23,12 +23,12 @@ void cmd_args(char **args, shell_type *mytype, char *buffer)
 	{
 		return;
 	}
-	analysis = isFile(comand);
+	analysis = File(comand);
 	if (analysis == 0)
 	{
-		mytype->current_state = 126;
+		mytype->current_stat = 126;
 		mytype->current_error = 13;
-		issue(mytype);
+		handle_err(mytype);
 		return;
 	}
 	if (analysis == 1)
@@ -36,7 +36,7 @@ void cmd_args(char **args, shell_type *mytype, char *buffer)
 		exec_child(comand, args, mytype, buffer);
 		return;
 	}
-	if (current_dir(comandd, args, buffer, mytype) == 1)
+	if (current_dir(comand, args, buffer, mytype) == 1)
 		return;
 	mytype->cmd_path = Find_dir(comand, mytype);
 	if (mytype->cmd_path != NULL)
@@ -45,7 +45,7 @@ void cmd_args(char **args, shell_type *mytype, char *buffer)
 		free_pointer((void *) mytype->cmd_path);
 		return;
 	}
-	mytype->current_state = 127;
+	mytype->current_stat = 127;
 	mytype->current_error = 132;
-	issue(mytype);
+	handle_err(mytype);
 }

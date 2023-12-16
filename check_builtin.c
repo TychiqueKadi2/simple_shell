@@ -11,15 +11,15 @@ int check_builtin(shell_type *mytype, char **args)
 	int a, none;
 
 	sysfunc_type builtins[] = {
-		{"exit", binaryExit},
-		{"env", binaryEnv}
+		{"exit", exit_bin},
+		{"env", env_bin}
 	};
 
 	none = sizeof(builtins) / sizeof(builtins[0]);
 	a = 0;
 	while (a < none)
 	{
-		if (_strcmp(mytype->cmd, builtins[a].cmd) == 0)
+		if (_strcmp(mytype->cmd, builtins[a].command) == 0)
 		{
 			builtins[a].func(mytype, args);
 			return (1);

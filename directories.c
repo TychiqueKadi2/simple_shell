@@ -39,7 +39,7 @@ char *Find_dir(char *directory, shell_type *mytype)
 
 	(void) mytype;
 
-	path = getEnv("PATH");
+	path = _env("PATH");
 	if (path == NULL)
 	{
 		return (NULL);
@@ -48,11 +48,11 @@ char *Find_dir(char *directory, shell_type *mytype)
 	token = strtok(path, ":");
 
 	none = _strlen(directory) + 2;
-	act = malloc(space * sizeof(char));
+	act = malloc(none * sizeof(char));
 	act = _strcpy(act, "/");
 	act = _strcat(act, directory);
 
-	while (tok != NULL)
+	while (token != NULL)
 	{
 		temp = malloc(_strlen(token) + none);
 		temp = _strcpy(temp, token);

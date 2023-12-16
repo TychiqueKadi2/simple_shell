@@ -92,10 +92,10 @@ void free_doublepointer(void **pointer);
 void sigint_handler(int sig);
 void *_realloc(void *ptr, unsigned int cur_size, unsigned int new_size);
 void cmd_args(char **args, shell_type *mytype, char *buffer);
-int check_builtin(shelldata_t *mytype, char **args);
+int check_builtin(shell_type *mytype, char **args);
 int find_sysfuncs(shell_type *mytype, char **args);
-void exit_bin(shelldata_t *mytype, char **args);
-void env_bin(shelldata_t *mytype, char **args);
+void exit_bin(shell_type *mytype, char **args);
+void env_bin(shell_type *mytype, char **args);
 int executable(char *file);
 int File(char *filename);
 int current_dir(char *commandd, char **args, char *buffer, shell_type *mytype);
@@ -111,8 +111,17 @@ void _pattern(shell_type *mytype, char **arggs);
 char *process_pattern(shell_type *mytype, char *str);
 int number_search(unsigned int X);
 int letter_search(char *str);
-char **tokenization(char *str, const char *delimm;
-char *Fusion(char *1st, char *2nd, char *3rd, const char *delimm);
-
+char **tokenization(char *str, const char *delimm);
+char *Fusion(char *Fst, char *Snd, char *Trd, const char *delimm);
+char *error_message(shell_type mytype);
+int num_count(int number);
+int exit_binSupport(shell_type *mytype, char *arggg);
+char *replace_env(shell_type *mytype, char *var);
+char *replace_value(shell_type *mytype, int *pos, char *str);
+char *sub(shell_type *mytype, int *input, char *word);
+char *serialization(int numm);
+void _path(char *pathh, shell_type *mytype);
+int _atoi(char *str);
+void exec_child(char *cmd, char **ar, shell_type *mytype, char *buffer);
 
 #endif

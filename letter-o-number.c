@@ -22,7 +22,7 @@ int letter_search(char *str)
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (Number_search(str[i]) == 0)
+		if (number_search(str[i]) == 0)
 			return (1);
 	}
 
