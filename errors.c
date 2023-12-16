@@ -34,7 +34,7 @@ void moreErr_info(shell_type *mytype, char *moreErr)
 	au = malloc(msge_size + n_size + 3);
 	au = _strcpy(au, mytype->argv[0]);
 	au = _strcat(au, ": ");
-	/* au = _strcat(au, n); */
+	au = _strcat(au, n);
 
 	au2 = malloc(_strlen(msge) + sizee + 3);
 	au2 = _strcpy(au2, msge);
