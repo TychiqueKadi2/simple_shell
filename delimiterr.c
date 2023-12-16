@@ -73,6 +73,11 @@ char *Fusion(char *Fst, char *Snd, char *Trd, const char *delimm)
 	else
 		Fst = "";
 
+	if (Trd != NULL)
+		Trd_size = _strlen(Trd);
+	else
+		Trd = "";
+
 	if (delimm != NULL)
 		delimm_size = _strlen((char *)delimm);
 	else
