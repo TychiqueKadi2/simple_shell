@@ -50,6 +50,7 @@ char *replace_value(shell_type *mytype, int *pos, char *str)
 	new_str = _strlen(input) + 1;
 	str = _realloc(str, cur_str, new_str);
 	str = _strcpy(str, input);
+	free_pointer(input);
 
 	*pos = i;
 
